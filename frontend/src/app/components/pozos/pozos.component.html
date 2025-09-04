@@ -44,3 +44,28 @@
     </tr>
   </tbody>
 </table>
+
+<h1>En diferentes medidas</h1>
+<!-- Tabla de pozos -->
+<!-- Tabla de conversiones -->
+<h3>Producción por pozo en diferentes unidades</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Barriles</th>
+      <th>Galones</th>
+      <th>Litros</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pozo of pozos" [appEstadoPozo]="pozo.estado">
+      <td>{{ pozo.nombre }}</td>
+      <td>{{ pozo.produccion_diaria | unidades:'barriles' }}</td>
+      <td>{{ pozo.produccion_diaria | unidades:'galones' }}</td>
+      <td>{{ pozo.produccion_diaria | unidades:'litros' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
