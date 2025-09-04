@@ -1,0 +1,31 @@
+# === Node.js (Backend + Frontend) ===
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+pnpm-lock.yaml
+
+# === Angular (Frontend) ===
+/frontend/dist/
+/frontend/.angular/cache/
+/frontend/.angular/
+*.ngsummary.json
+
+# === TypeScript (Backend + Frontend) ===
+*.tsbuildinfo
+/dist/
+/build/
+
+# === Environment files ===
+/backend/.env
+/frontend/.env
+
+# === Logs ===
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# === IDE/Editor ===
+.vscode/
