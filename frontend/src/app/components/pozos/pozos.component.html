@@ -1,0 +1,46 @@
+<!-- Formulario para agregar pozos -->
+<form (ngSubmit)="agregarPozo()">
+  <input [(ngModel)]="nombre" name="nombre" placeholder="Nombre" required>
+  <input [(ngModel)]="ubicacion" name="ubicacion" placeholder="Ubicación" required>
+  <input [(ngModel)]="produccion_diaria" name="produccion" type="number" placeholder="Producción diaria" min="0" required>
+  <select [(ngModel)]="estado" name="estado">
+    <option value="activo">Activo</option>
+    <option value="inactivo">Inactivo</option>
+  </select>
+  <button type="submit">Agregar Pozo</button>
+</form>
+
+<!-- Estadísticas -->
+<div class="estadisticas">
+  <p>Porcentaje activos: {{ porcentajeActivos }}%</p>
+  <p>Porcentaje inactivos: {{ porcentajeInactivos }}%</p>
+  <p>Producción total diaria (activos): {{ produccionTotalActiva | unidades:'barriles' }} barriles</p>
+</div>
+
+<!-- Tabla de pozos -->
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Ubicación</th>
+      <th>Estado</th>
+      <th>Producción diaria</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pozo of pozos" [appEstadoPozo]="pozo.estado">
+      <td>{{ pozo.id }}</td>
+      <td>{{ pozo.nombre }}</td>
+      <td>{{ pozo.ubicacion }}</td>
+      <td>{{ pozo.estado }}</td>
+      <td>{{ pozo.produccion_diaria | unidades:'barriles' }}</td>
+      <td>
+        <button (click)="toggleEstado(pozo)">
+          {{ pozo.estado === 'activo' ? 'Desactivar' : 'Activar' }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
