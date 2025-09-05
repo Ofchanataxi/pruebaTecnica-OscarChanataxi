@@ -32,7 +32,7 @@ Una aplicación full-stack para gestionar pozos petroleros con funcionalidades C
 ## 📁 Estructura del Proyecto
 
 ```
-pozos-petroleros/
+pruebaTecnica-OscarChanataxi/
 ├── backend/
 │   ├── src/
 │   │   ├── controllers/
